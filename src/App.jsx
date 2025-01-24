@@ -6,6 +6,7 @@ import Auth from './pages/auth';
 import Link from './pages/link';
 import RedirectLink from './pages/redirect-link';
 import ErrorBoundary from './pages/error-boundary';
+import './index.css'
 function App() {
 
   const router = createBrowserRouter([
