@@ -8,12 +8,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import logo from '../assets/freepik__background__80546.png';
-import { Heading1Icon, LinkIcon, LogOutIcon } from "lucide-react";
+import { LinkIcon, LogOutIcon } from "lucide-react";
 
 
 const Header = () => {
     const navigate = useNavigate();
-    const user = true;
+    const user = false;
     return (
         <nav className="border-b-2 flex justify-between py-3 px-6">
             <Link to="/" className="flex items-center space-x-2">

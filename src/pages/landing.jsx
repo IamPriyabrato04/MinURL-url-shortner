@@ -90,13 +90,13 @@ const LandingPage = () => {
             </section>
 
             {/* FAQ Section */}
-            <section id="faq" className="flex flex-col items-center justify-center w-full px-6 py-16 border border-red-700 bg-slate-800">
+            <section id="faq" className="flex flex-col items-center justify-center w-full px-6 py-16 bg-slate-800">
                 <h3 className="text-5xl font-semibold text-slate-100 ">Frequently Asked Questions</h3>
                 <p className="mt-4 text-2xl text-slate-300">
                     Can&apos;t find the answer you&apos;re looking for? Send us a <a href="#" className=" text-violet-500 hover:text-violet-300 underline-offset-2">message</a>.
                 </p>
                 <div className="flex flex-col items-center justify-center w-full mt-8 border border-red-700 ">
-                    <Accordion type="single" collapsible className="w-4/5 border border-red-700 md:px-11">
+                    <Accordion type="single" collapsible className="w-4/5 md:px-11">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="text-xl justify-center text">Is it accessible?</AccordionTrigger>
                             <AccordionContent>
@@ -113,19 +113,19 @@ const LandingPage = () => {
                         <AccordionItem value="item-3">
                             <AccordionTrigger className="text-xl justify-center">Is it animated?</AccordionTrigger>
                             <AccordionContent>
-                                Yes. It's animated by default, but you can disable it if you prefer.
+                                Yes. It&apos;s animated by default, but you can disable it if you prefer.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger className="text-xl justify-center">Is it animated?</AccordionTrigger>
                             <AccordionContent>
-                                Yes. It's animated by default, but you can disable it if you prefer.
+                                Yes. It&apos;s animated by default, but you can disable it if you prefer.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-5">
                             <AccordionTrigger className="text-xl justify-center">Is it animated?</AccordionTrigger>
                             <AccordionContent>
-                                Yes. It's animated by default, but you can disable it if you prefer.
+                                Yes. It&apos;s animated by default, but you can disable it if you prefer.
                             </AccordionContent>
                         </AccordionItem>
 

@@ -7,6 +7,7 @@ import Link from './pages/link';
 import RedirectLink from './pages/redirect-link';
 import ErrorBoundary from './pages/error-boundary';
 import './index.css'
+import UrlProvider from './context';
 function App() {
 
   const router = createBrowserRouter([
@@ -42,7 +43,10 @@ function App() {
     }
   ])
 
-  return <RouterProvider router={router} />
+  return (
+    <UrlProvider>
+      <RouterProvider router={router} />
+    </UrlProvider>)
 }
 
 export default App
