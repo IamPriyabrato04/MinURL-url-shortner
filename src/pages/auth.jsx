@@ -5,12 +5,24 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
+import { UrlState } from "@/context";
 import { TabsContent } from "@radix-ui/react-tabs";
-import { useSearchParams } from "react-router-dom"
+import { useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom"
 
 const Auth = () => {
 
   const [searchParams] = useSearchParams();
+  const longLink = searchParams.get("createNew");
+  const navigate = useNavigate();
+
+  const { isAuthenticated, loading } = UrlState();
+
+  useEffect(() => {
+    if (isAuthenticated && !loading) {
+      navigate(`/dashboard?createNew=${longLink ? `createNew=${longLink}` : ''}`);
+    }
+  }, [isAuthenticated, loading]);
 
   return (
     <div className="flex flex-col items-center pt-10 gap-10 min-h-screen bg-slate-900">
