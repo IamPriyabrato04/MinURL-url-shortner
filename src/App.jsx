@@ -8,6 +8,7 @@ import RedirectLink from './pages/redirect-link';
 import ErrorBoundary from './pages/error-boundary';
 import './index.css'
 import UrlProvider from './context';
+import RequireAuth from './components/require-auth';
 function App() {
 
   const router = createBrowserRouter([
@@ -21,7 +22,9 @@ function App() {
         },
         {
           path: "/dashboard",
-          element: <Dashboard />,
+          element: (<RequireAuth >
+            <Dashboard />
+          </RequireAuth >),
           errorElement: <ErrorBoundary />
         },
         {
@@ -31,12 +34,12 @@ function App() {
         },
         {
           path: "/link/:id",
-          element: <Link />,
+          element: <RequireAuth><Link /></RequireAuth>,
           errorElement: <ErrorBoundary />
         },
         {
           path: "/:id",
-          element: <RedirectLink />,
+          element: <RequireAuth><RedirectLink /></RequireAuth>,
           errorElement: <ErrorBoundary />
         }
       ]
