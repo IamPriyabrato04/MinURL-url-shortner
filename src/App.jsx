@@ -22,9 +22,7 @@ function App() {
         },
         {
           path: "/dashboard",
-          element: (<RequireAuth >
-            <Dashboard />
-          </RequireAuth >),
+          element: <RequireAuth><Dashboard /></RequireAuth>,
           errorElement: <ErrorBoundary />
         },
         {
