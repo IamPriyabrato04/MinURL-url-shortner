@@ -63,7 +63,6 @@ const Login = () => {
             // api call
             console.log("Submitting formData:", formData);
             await fnLogin();
-
         } catch (e) {
             const newErrors = {};
 

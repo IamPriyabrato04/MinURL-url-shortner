@@ -108,7 +108,7 @@ const Signup = () => {
                         {errors.password && <Error message={errors.password} />}
                     </div>
                     <div className="space-y-1">
-                        <Label htmlFor="profile_pic">Password</Label>
+                        <Label htmlFor="profile_pic">Upload Profile Picture</Label>
                         <Input id="profile_pic" name="profile_pic" type="file" accepy="image/*" onChange={handleInputChange} />
                         {errors.profile_pic && <Error message={errors.profile_pic} />}
                     </div>
