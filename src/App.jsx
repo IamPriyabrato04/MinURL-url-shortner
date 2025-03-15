@@ -8,6 +8,7 @@ import RedirectLink from './pages/redirect-link';
 import './index.css'
 import UrlProvider from './context';
 import RequireAuth from './components/require-auth';
+
 function App() {
 
   const router = createBrowserRouter([
@@ -32,16 +33,19 @@ function App() {
         },
         {
           path: "/:id",
-          element: <RequireAuth><RedirectLink /></RequireAuth>,
+          element: <RedirectLink />,
         }
       ]
     }
   ])
 
   return (
-    <UrlProvider>
-      <RouterProvider router={router} />
-    </UrlProvider>)
+    <>
+      <UrlProvider>
+        <RouterProvider router={router} />
+      </UrlProvider>
+    </>
+  )
 }
 
 export default App
