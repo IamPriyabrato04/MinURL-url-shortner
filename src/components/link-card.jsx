@@ -21,6 +21,9 @@ const LinkCard = ({ url = [], fetchUrls }) => {
 
     const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, url.id);
 
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+
     return (
         <div className="relative w-full flex flex-col md:flex-row gap-4 p-4 bg-gray-900 rounded-lg shadow-md">
             {/* Action Buttons - Positioned at Top Right */}
@@ -29,7 +32,7 @@ const LinkCard = ({ url = [], fetchUrls }) => {
                     variant="ghost"
                     size="icon"
                     onClick={() =>
-                        navigator.clipboard.writeText(`https://minurl.com/${url?.short_url}`)
+                        navigator.clipboard.writeText(`${BASE_URL}${url?.short_url}`)
                     }
                 >
                     <Copy className="w-5 h-5" />
@@ -63,7 +66,7 @@ const LinkCard = ({ url = [], fetchUrls }) => {
                         {url?.title}
                     </span>
                     <span className="text-sm md:text-base text-blue-400 font-bold hover:underline cursor-pointer break-words">
-                        https://minurl.com/{url?.custom_url ? url?.custom_url : url.short_url}
+                        {`${BASE_URL}`}{url?.custom_url ? url?.custom_url : url.short_url}
                     </span>
                     <span className="text-xs md:text-sm font-extralight">
                         {new Date(url?.created_at).toLocaleString()}

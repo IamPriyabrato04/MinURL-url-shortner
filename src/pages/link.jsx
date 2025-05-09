@@ -20,6 +20,9 @@ const LinkPage = () => {
     const { loading: loadingStats, data: stats, fn: fnStats } = useFetch(getClicksForUrl, id);
     const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, id);
 
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+
     useEffect(() => {
         fn();
     }, []);
@@ -57,12 +60,12 @@ const LinkPage = () => {
                     </span>
 
                     <a
-                        href={`https://minurl.in/${link}`}
+                        href={`${BASE_URL}/${link}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-lg sm:text-2xl text-blue-400 font-bold hover:underline cursor-pointer break-all"
                     >
-                        https://minurl.in/{link}
+                        {`${BASE_URL}/${link}`}
                     </a>
 
                     <a
@@ -84,7 +87,7 @@ const LinkPage = () => {
                         <Button
                             variant="ghost"
                             onClick={() =>
-                                navigator.clipboard.writeText(`https://minurl.in/${link}`)
+                                navigator.clipboard.writeText(`${BASE_URL}/${link}`)
                             }
                         >
                             <Copy className="w-5 h-5" />

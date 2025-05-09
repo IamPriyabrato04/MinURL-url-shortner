@@ -17,7 +17,7 @@ const AppLayout = () => {
             </main>
 
             {/* Footer */}
-            <footer id="contact" className="w-full bg-gray-900 text-gray-300 py-12 relative overflow-hidden">
+            <footer id="contact" className="w-full bg-gray-900 text-gray-300 py-8 relative overflow-hidden">
                 {/* Floating Gradient Accent */}
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-3xl opacity-20"></div>
 
@@ -25,7 +25,7 @@ const AppLayout = () => {
 
                     {/* Brand & Tagline */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h4 className="text-3xl font-extrabold text-white tracking-wide">MinURL 🌐</h4>
+                        <h4 className="text-3xl font-extrabold text-white tracking-wide flex"><img width="40" height="40" src="/src/assets/icons8-broken-link-96.png" alt="broken-link" />MinURL</h4>
                         <p className="mt-2 text-gray-400 max-w-xs text-sm">
                             Shorten links in seconds and track performance in real-time.
                         </p>
@@ -41,19 +41,19 @@ const AppLayout = () => {
                     {/* Social Icons */}
                     <div className="flex space-x-4">
                         <a href="#" className="text-gray-400 hover:text-indigo-400 transition duration-300 text-2xl">
-                            🔗
+                            <img width="44" height="44" src="https://img.icons8.com/office/40/facebook.png" alt="facebook" />
                         </a>
                         <a href="#" className="text-gray-400 hover:text-indigo-400 transition duration-300 text-2xl">
-                            🐦
+                            <img width="48" height="48" src="https://img.icons8.com/ios/50/twitterx--v1.png" alt="twitterx--v1" />
                         </a>
                         <a href="#" className="text-gray-400 hover:text-indigo-400 transition duration-300 text-2xl">
-                            📘
+                            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />
                         </a>
                     </div>
                 </div>
 
                 {/* Divider & Copyright */}
-                <div className="relative z-10 mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <div className="relative z-10 mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
                     &copy; {new Date().getFullYear()} MinURL. All rights reserved.
                 </div>
             </footer>

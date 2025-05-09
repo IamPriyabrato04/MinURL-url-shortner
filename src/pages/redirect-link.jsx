@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 
 const RedirectLink = () => {
-  const { id } = useParams();
+
+  const { id } = useParams(); // Extract short URL from route
 
   const { loading, data, fn } = useFetch(getLongUrl, id);
 
@@ -15,6 +16,7 @@ const RedirectLink = () => {
     originalUrl: data?.original_url,
   });
 
+  // Fetch the original long URL
   useEffect(() => {
     fn();
   }, []);
@@ -23,7 +25,6 @@ const RedirectLink = () => {
     if (!loading && data) {
       fnStats();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   if (loading || loadingStats) {

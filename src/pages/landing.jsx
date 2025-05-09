@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/accordion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Rocket, Lock, BarChart } from "lucide-react";
+
 
 const LandingPage = () => {
     const [longUrl, setLongUrl] = useState("");
@@ -31,7 +33,8 @@ const LandingPage = () => {
 
                 {/* Subheading */}
                 <p className="mt-4 text-lg sm:text-2xl text-indigo-300 max-w-3xl font-medium tracking-wide">
-                    🚀 Shorten your links, track performance, and share them effortlessly.
+                    <Rocket className="inline-block animate-bounce mr-3 text-lime-200" />
+                    Shorten your links, track performance, and share them effortlessly.
                 </p>
 
                 {/* Additional Info (Better Layout for Large Screens) */}
@@ -171,52 +174,71 @@ const LandingPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10 max-w-6xl mx-auto">
 
                     {/* Free Plan */}
-                    <div className="p-8 bg-slate-800 rounded-xl shadow-lg border border-slate-700 transition-all duration-300 hover:scale-105">
-                        <h3 className="text-2xl font-bold text-indigo-400">Free</h3>
-                        <p className="mt-2 text-lg text-slate-300">$0/month</p>
-                        <ul className="mt-4 space-y-2 text-slate-400 text-sm">
-                            <li>✔️ Shorten unlimited URLs</li>
-                            <li>✔️ Basic Analytics</li>
-                            <li>❌ Custom Short Links</li>
-                            <li>❌ Advanced Analytics</li>
+                    <div className="p-8 bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl shadow-md border border-slate-600 transition-all duration-300 hover:scale-105">
+                        <h3 className="text-2xl font-extrabold text-indigo-300 tracking-tight">Free Plan</h3>
+                        <p className="mt-2 text-lg text-slate-300 font-medium">₹0/month</p>
+
+                        <ul className="mt-5 space-y-3 text-slate-400 text-sm font-medium">
+                            <li className="flex items-center gap-2">✔️ Shorten 5 URLs/day</li>
+                            <li className="flex items-center gap-2 opacity-50 ">✔️ Basic Analytics</li>
+                            <li className="flex items-center gap-2 opacity-50 ">✔️ Custom Short Links</li>
+                            <li className="flex items-center gap-2 opacity-50 ">❌ Advanced Analytics</li>
                         </ul>
-                        <button className="mt-6 w-full py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg font-semibold shadow-md">
+
+                        <button className="mt-8 w-full py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow">
                             Get Started
                         </button>
                     </div>
 
-                    {/* Pro Plan (Highlighted) */}
-                    <div className="p-8 bg-indigo-600 rounded-xl shadow-lg border border-indigo-500 transition-all duration-300 hover:scale-105 relative">
-                        <span className="absolute top-3 right-3 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-md">
-                            Most Popular
+
+                    {/* Pro Plan */}
+                    <div className="p-8 bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-2xl shadow-xl border border-indigo-400 transition-all duration-300 hover:scale-105 relative">
+                        <span className="absolute top-3 right-3 bg-yellow-300 text-black text-xs font-semibold px-2 py-1 rounded-md shadow-sm">
+                            ⭐ Most Popular
                         </span>
-                        <h3 className="text-2xl font-bold text-white">Pro</h3>
-                        <p className="mt-2 text-lg text-indigo-100">$9.99/month</p>
-                        <ul className="mt-4 space-y-2 text-indigo-100 text-sm">
-                            <li>✔️ All Free Plan Features</li>
-                            <li>✔️ Custom Short Links</li>
-                            <li>✔️ Detailed Analytics</li>
-                            <li>✔️ API Access</li>
+                        <h3 className="text-2xl font-extrabold text-white tracking-tight">Pro Plan</h3>
+                        <p className="mt-2 text-lg text-yellow-200 font-medium">₹499/month <span className="text-sm text-white/80">(30-day free trial)</span></p>
+
+                        <ul className="mt-5 space-y-3 text-indigo-100 text-sm font-medium">
+                            <li className="flex items-center gap-2">✔️ Shorten unlimited URLs</li>
+                            <li className="flex items-center gap-2">✔️ Custom Short Links</li>
+                            <li className="flex items-center gap-2">✔️ Basic Analytics</li>
+                            <li className="flex items-center gap-2">✔️ API Access</li>
                         </ul>
-                        <button className="mt-6 w-full py-3 bg-white text-indigo-600 hover:bg-gray-200 rounded-lg font-semibold shadow-md">
-                            Upgrade to Pro
-                        </button>
+
+                        <a
+                            href="https://buy.stripe.com/aEU7trgP56D55dm288"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-8 inline-block w-full text-center py-3 bg-white text-indigo-700 font-semibold rounded-xl hover:bg-slate-100 transition-colors shadow-md"
+                        >
+                            Start Free Trial
+                        </a>
                     </div>
 
-                    {/* Enterprise Plan */}
-                    <div className="p-8 bg-slate-800 rounded-xl shadow-lg border border-slate-700 transition-all duration-300 hover:scale-105">
-                        <h3 className="text-2xl font-bold text-indigo-400">Enterprise</h3>
-                        <p className="mt-2 text-lg text-slate-300">Custom Pricing</p>
-                        <ul className="mt-4 space-y-2 text-slate-400 text-sm">
-                            <li>✔️ All Pro Plan Features</li>
-                            <li>✔️ Team Collaboration</li>
-                            <li>✔️ Premium Support</li>
-                            <li>✔️ Dedicated Infrastructure</li>
+
+                    {/* Premium Plan */}
+                    <div className="p-8 bg-gradient-to-br from-yellow-300 via-yellow-200 to-yellow-100 rounded-2xl shadow-2xl border border-yellow-400 transition-all duration-300 hover:scale-105 hover:shadow-yellow-400/50">
+                        <h3 className="text-3xl font-extrabold text-indigo-700 tracking-tight">🌟 Premium Plan</h3>
+                        <p className="mt-2 text-2xl text-slate-800 font-semibold">₹1499<span className="text-base font-medium text-slate-600">/month</span></p>
+
+                        <ul className="mt-6 space-y-3 text-slate-700 text-sm font-medium">
+                            <li className="flex items-center gap-2">✅ All Pro Plan Features</li>
+                            <li className="flex items-center gap-2">✅ Team Collaboration</li>
+                            <li className="flex items-center gap-2">✅ Premium Support</li>
+                            <li className="flex items-center gap-2">✅ Advanced Analytics</li>
                         </ul>
-                        <button className="mt-6 w-full py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg font-semibold shadow-md">
-                            Contact Sales
-                        </button>
+
+                        <a
+                            href="https://buy.stripe.com/eVadRP6ar9Ph9tC7st"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-8 inline-block w-full text-center py-3 bg-indigo-600 text-white text-lg font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-md"
+                        >
+                            Upgrade to Premium
+                        </a>
                     </div>
+
 
                 </div>
             </section>
