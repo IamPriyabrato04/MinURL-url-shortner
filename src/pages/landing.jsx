@@ -8,12 +8,14 @@ import {
 } from "@/components/ui/accordion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Rocket, Lock, BarChart } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { useStripeRedirect } from "@/hooks/useRedirectTocheckOut";
 
 
 const LandingPage = () => {
     const [longUrl, setLongUrl] = useState("");
     const navigate = useNavigate();
+    const { redirectToStripe } = useStripeRedirect()
 
     const handleShorten = (e) => {
         e.preventDefault();
@@ -156,7 +158,7 @@ const LandingPage = () => {
                             <div className="flex items-center gap-4">
                                 <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full border-2 border-slate-500" />
                                 <div className="text-left">
-                                    <p className="text-slate-300 italic">"{testimonial.quote}"</p>
+                                    <p className="text-slate-300 italic">&quot;{testimonial.quote}&quot;</p>
                                     <span className="text-sm text-slate-400 mt-2 block">— {testimonial.name}</span>
                                 </div>
                             </div>
@@ -185,7 +187,7 @@ const LandingPage = () => {
                             <li className="flex items-center gap-2 opacity-50 ">❌ Advanced Analytics</li>
                         </ul>
 
-                        <button className="mt-8 w-full py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow">
+                        <button className="mt-8 w-full py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow" onClick={() => redirectToStripe('free')}>
                             Get Started
                         </button>
                     </div>
@@ -206,14 +208,13 @@ const LandingPage = () => {
                             <li className="flex items-center gap-2">✔️ API Access</li>
                         </ul>
 
-                        <a
-                            href="https://buy.stripe.com/aEU7trgP56D55dm288"
-                            target="_blank"
+                        <button
+                            onClick={() => redirectToStripe('pro')}
                             rel="noopener noreferrer"
                             className="mt-8 inline-block w-full text-center py-3 bg-white text-indigo-700 font-semibold rounded-xl hover:bg-slate-100 transition-colors shadow-md"
                         >
-                            Start Free Trial
-                        </a>
+                            Subscribe
+                        </button>
                     </div>
 
 
@@ -229,14 +230,14 @@ const LandingPage = () => {
                             <li className="flex items-center gap-2">✅ Advanced Analytics</li>
                         </ul>
 
-                        <a
-                            href="https://buy.stripe.com/eVadRP6ar9Ph9tC7st"
+                        <button
+                            onClick={() => redirectToStripe('premium')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-8 inline-block w-full text-center py-3 bg-indigo-600 text-white text-lg font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-md"
                         >
                             Upgrade to Premium
-                        </a>
+                        </button>
                     </div>
 
 

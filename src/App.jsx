@@ -8,6 +8,7 @@ import RedirectLink from './pages/redirect-link';
 import './index.css'
 import UrlProvider from './context';
 import RequireAuth from './components/require-auth';
+import PaymentSuccess from './pages/SuccessfulPayment';
 
 function App() {
 
@@ -26,6 +27,10 @@ function App() {
         {
           path: "/auth",
           element: <Auth />,
+        },
+        {
+          path: "/payment-success",
+          element: <RequireAuth><PaymentSuccess /></RequireAuth>,
         },
         {
           path: "/link/:id",
