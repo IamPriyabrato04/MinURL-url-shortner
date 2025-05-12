@@ -1,6 +1,6 @@
 # 🔗 MinURL - Modern URL Shortener
 
-🚀 [Live Site](https://min-url-url-shortner.vercel.app/)
+🚀 **Live Link** - [ https://min-url-url-shortner.vercel.app](https://min-url-url-shortner.vercel.app/)
 
 MinURL is a fast, secure, and user-friendly URL shortener that helps you create and manage custom short links with analytics, expiration, and QR code support. Whether you're sharing on social media or organizing your digital resources, MinURL makes it simple and efficient.
 
