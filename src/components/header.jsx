@@ -23,7 +23,7 @@ const Header = () => {
             {/* Navigation Bar */}
             <nav className="border-b-2 flex items-center justify-between py-4 px-6 bg-slate-900 text-white">
                 <Link to="/" className="flex items-center space-x-2">
-                    <img width="48" height="48" src="/src/assets/icons8-broken-link-96.png" alt="broken-link" />
+                    <img width="48" height="48" src="/icons8-broken-link-96.png" alt="broken-link" />
                     <h1 className="text-2xl font-bold text-indigo-100">MinURL </h1>
                 </Link>
 
