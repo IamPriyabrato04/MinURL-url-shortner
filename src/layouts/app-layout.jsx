@@ -25,7 +25,7 @@ const AppLayout = () => {
 
                     {/* Brand & Tagline */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h4 className="text-3xl font-extrabold text-white tracking-wide flex"><img width="40" height="40" src="/src/assets/icons8-broken-link-96.png" alt="broken-link" />MinURL</h4>
+                        <h4 className="text-3xl font-extrabold text-white tracking-wide flex"><img width="48" height="48" src="/icons8-broken-link-96.png" alt="broken-link" />MinURL</h4>
                         <p className="mt-2 text-gray-400 max-w-xs text-sm">
                             Shorten links in seconds and track performance in real-time.
                         </p>
