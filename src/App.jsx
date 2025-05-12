@@ -30,7 +30,7 @@ function App() {
         },
         {
           path: "/payment-success",
-          element: <RequireAuth><PaymentSuccess /></RequireAuth>,
+          element: <PaymentSuccess />,
         },
         {
           path: "/link/:id",
